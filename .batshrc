@@ -1,9 +1,0 @@
-# Personal
-alias sysup="sudo dnf up && flatpak update"
-fastfetch
-
-echo;
-echo;
-echo "She believes in you ❤️❤️❤️"
-echo;
-echo;
