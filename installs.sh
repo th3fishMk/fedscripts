@@ -6,11 +6,17 @@
 echo "Today is " `date`
 echo "Installing all the things"
 
+sudo dnf clean all
+sudo dnf -y update
+
+
 # All system install will be listed here
 sudo dnf install gparted \
 gnome-disks \
 @c-development \
 
+# Brave
+curl -fsS https://dl.brave.com/install.sh | sh
 
 # vscodium
 sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
@@ -50,3 +56,15 @@ libxdo-devel
 
 # flatpack
 flatpak install flathub com.belmoussaoui.Authenticator
+flatpak install flathub org.inkscape.Inkscape
+flatpak install flathub org.onlyoffice.desktopeditors
+flatpak install flathub com.spotify.Client
+flatpak install flathub org.telegram.desktop
+flatpak install flathub org.videolan.VLC
+
+
+# Steam
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+
+sudo dnf install steam -y
