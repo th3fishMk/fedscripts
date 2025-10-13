@@ -7,6 +7,7 @@ fastfetch
 
 alias repos='cd /mnt/repos'
 alias rsrc="source ~/.bashrc"
+alias sysup='sudo dnf update ; echo "+++ dnf done updating :D" ; flatpak update ; echo "+++ flatpak done updating :D"'
 # [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)" # SSH stuff
 
 echo "Done!"
