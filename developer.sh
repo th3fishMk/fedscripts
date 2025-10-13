@@ -8,7 +8,7 @@ echo "Installing all the dev things"
 sudo dnf clean all
 sudo dnf -y update
 
-# All system install will be listed here
+# Base
 sudo dnf install @c-development
 
 # vscodium
@@ -25,16 +25,20 @@ sudo dnf install code
 # Download and install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Download and install nvm:
+# Download and install nvm and node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 \. "$HOME/.nvm/nvm.sh"
 nvm install 22
 node -v
 npm -v
 
-# Node stuff
+# Node global tools
 npm install -g pnpm
 npm install -g typescript
+
+# pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+pnpm add -D @tauri-apps/cli@latest
 
 # Tauri dependencies
 sudo dnf check-update
