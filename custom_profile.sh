@@ -15,3 +15,5 @@ alias sysup='sudo dnf update ; echo "+++ dnf done updating :D" ; flatpak update 
 echo "Done!"
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+
+export PATH="/mnt/repos/fish/th3fishMk/linux-settings/scripts:$PATH"

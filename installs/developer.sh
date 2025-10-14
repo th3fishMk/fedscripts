@@ -56,3 +56,6 @@ sudo dnf install webkit2gtk4.1-devel \
 curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh
+
+curl -L https://github.com/biomejs/biome/releases/download/@biomejs/biome@2.2.6/biome-linux-x64 -o biome
+chmod +x biome
