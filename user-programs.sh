@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Run `chmod u+x user-programs.sh`
 # And then `sh user-programs.sh`
 

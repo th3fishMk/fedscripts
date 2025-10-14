@@ -1,8 +1,9 @@
+#!/bin/bash
 # This commands assume that the distro being use is Fedora or fedora based
 # Run `chmod u+x developer.sh`
 # And then `sh developer.sh`
 
-echo "Today is " $(date)
+echo "Today is " "$(date)"
 echo "Installing all the dev things"
 
 sudo dnf clean all
@@ -38,7 +39,7 @@ npm install -g typescript
 
 # pnpm
 curl -fsSL https://get.pnpm.io/install.sh | sh -
-pnpm add -D @tauri-apps/cli@latest
+# pnpm add -D @tauri-apps/cli@latest
 
 # Tauri dependencies
 sudo dnf check-update
@@ -50,3 +51,8 @@ sudo dnf install webkit2gtk4.1-devel \
     libappindicator-gtk3-devel \
     librsvg2-devel \
     libxdo-devel
+
+# Dotnet stuff
+curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
+chmod +x ./dotnet-install.sh
+./dotnet-install.sh
