@@ -1,12 +1,21 @@
 #!/bin/bash
 # chmod +x pending-git-actions.sh
+# Usage: ./pending-git-actions.sh [directory]
+# Prints the status of all the git repositories
+# Inside a folder, if no folder is indicated
+# It will default to the current directory
 
-echo "Scanning subdirectories in: $(pwd)"
+DIR=${1:-$(pwd)}
 
-for repo in */; do
-    [ -d "$repo/.git" ] || continue # skip if not a git repo
+echo "Scanning subdirectories in: $DIR"
 
-    # Start the line for the repo
+for repo in "$DIR"/*/; do
+    if [ ! -d "$repo/.git" ]; then
+        printf "\033[0;33mDirectory %s is not a Git repository\033[0m\n" "$repo"
+
+        continue
+    fi
+
     printf "Current repo: %s" "$repo"
 
     (

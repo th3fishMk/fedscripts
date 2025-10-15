@@ -16,4 +16,4 @@ echo "Done!"
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
-export PATH="/mnt/repos/fish/th3fishMk/linux-settings/scripts:$PATH"
+export PATH="/mnt/repos/th3fishMk/fedscripts/scripts:$PATH"
