@@ -2,6 +2,7 @@
 # This commands assume that the distro being use is Fedora or fedora based
 # Run `chmod u+x developer.sh`
 # And then `sh developer.sh`
+# Install almost all the developer tools needed to do all the things
 
 echo "Today is " "$(date)"
 echo "Installing all the dev things"

@@ -1,10 +1,10 @@
 #!/bin/bash
-# Usage: ./clone_all_repos.sh <github-username> [destination-dir]
+# Usage: ./clone_all_repos.sh <github-username> <destination-dir>
 # Clones all the repos (up to 1000) from one github user, or organization
 # Into a specific dir, using SSH
 
 USER=${1:?Please provide a GitHub username}
-DEST=${2:-$PWD} # Default to current directory
+DEST=${2:?Please provide a destination directory}
 
 mkdir -p "$DEST"
 

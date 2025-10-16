@@ -2,6 +2,7 @@
 # flatpack
 # Run `chmod u+x ./flatpacks.sh`
 # And then `sh ./flatpacks.sh`
+# install most of my user programs
 
 flatpak install -y flathub com.belmoussaoui.Authenticator
 flatpak install -y flathub com.belmoussaoui.Decoder
