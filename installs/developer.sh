@@ -37,6 +37,8 @@ npm -v
 # Node global tools
 npm install -g pnpm
 npm install -g typescript
+npm install -g yo generator-code
+npm install -g @vscode/vsce
 
 # pnpm
 curl -fsSL https://get.pnpm.io/install.sh | sh -

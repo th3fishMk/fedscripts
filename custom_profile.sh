@@ -18,5 +18,47 @@ export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH="/mnt/repos/th3fishMk/fedscripts/scripts:$PATH"
 
+# Git info generator (no color here)
+parse_git_branch() {
+    git rev-parse --is-inside-work-tree &>/dev/null || return
+
+    # branch
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+
+    # repo root name and relative path from repo root
+    toplevel=$(git rev-parse --show-toplevel 2>/dev/null) || return
+    repo_name=$(basename "$toplevel")
+    relpath=$(git rev-parse --show-prefix 2>/dev/null)
+
+    # build localpath: repo_name/ or repo_name/<subpath>
+    if [ -z "$relpath" ]; then
+        localpath="${repo_name}/"
+    else
+        # relpath already ends with / when non-empty
+        localpath="${repo_name}/${relpath}"
+    fi
+
+    # state: dirty, unpushed, or clean
+    if ! git diff --quiet 2>/dev/null || ! git diff --quiet --cached 2>/dev/null; then
+        state="dirty"
+    elif [ -n "$(git log --branches --not --remotes 2>/dev/null)" ]; then
+        state="unpushed"
+    else
+        state="clean"
+    fi
+
+    echo "${branch}|${localpath}|${state}"
+}
+
+export PS1='\[\033[0;32m\]\u@\h\[\033[0m\]:\[\033[0;34m\]\W\[\033[0m\]$(\
+info=$(parse_git_branch); \
+if [ -n "$info" ]; then \
+    IFS="|" read -r branch prefix state <<< "$info"; \
+    if [ "$state" = "dirty" ]; then color="\[\033[0;31m\]"; \
+    elif [ "$state" = "unpushed" ]; then color="\[\033[0;33m\]"; \
+    else color="\[\033[0;32m\]"; fi; \
+    echo " ${color}( ${branch} | ${prefix} )\[\033[0m\]" ; \
+fi) \$ '
+
 fastfetch
 echo "Done!"
