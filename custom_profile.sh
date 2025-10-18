@@ -8,6 +8,20 @@
 
 # [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)" # SSH stuff
 
+#
+# Enable incremental history search with up/down arrows
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+# Save more history lines
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+# Append to history instead of overwriting
+shopt -s histappend
+
+# Save after each command (so multiple terminals share history)
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 # Aliases
 alias repos='cd /mnt/repos'
 alias repos-fish='cd /mnt/repos/th3fishMk'
