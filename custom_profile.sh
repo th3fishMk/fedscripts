@@ -24,8 +24,6 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # Aliases
 alias repos='cd /mnt/repos'
-alias repos-fish='cd /mnt/repos/th3fishMk'
-alias repos-scrawl='cd /mnt/repos/und3rscrawl'
 alias rsrc="source ~/.bashrc"
 alias sysup='sudo dnf update ; echo "+++ dnf done updating :D" ; flatpak update ; echo "+++ flatpak done updating :D"'
 
