@@ -28,8 +28,6 @@ alias rsrc="source ~/.bashrc"
 alias sysup='sudo dnf update ; echo "+++ dnf done updating :D" ; flatpak update ; echo "+++ flatpak done updating :D"'
 
 # Exports
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH="/mnt/repos/th3fishMk/fedscripts/scripts:$PATH"
 
 parse_git_branch() {

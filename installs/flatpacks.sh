@@ -19,3 +19,11 @@ flatpak install -y flathub org.onlyoffice.desktopeditors
 flatpak install -y flathub org.telegram.desktop
 flatpak install -y flathub org.videolan.VLC
 flatpak install -y flathub page.codeberg.lo_vely.Nucleus
+flatpak install -y flathub dev.mufeed.Wordbook
+flatpak install -y flathub org.gnome.Crosswords.Editor
+flatpak install -y flathub org.gnome.Mines
+flatpak install -y flathub org.gnome.Crosswords
+flatpak install -y flathub org.gnome.Chess
+flatpak install -y flathub io.github.sepehr_rs.Sudoku
+flatpak install -y flathub org.gnome.Mahjongg
+flatpak install -y flathub com.github.hugolabe.Wike
