@@ -23,12 +23,15 @@ shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # Aliases
-alias repos='cd /mnt/repos'
-alias rsrc="source ~/.bashrc"
-alias sysup='sudo dnf update ; echo "+++ dnf done updating :D" ; flatpak update ; echo "+++ flatpak done updating :D"'
+alias stuff='cd /mnt/stuff'
+alias repos='cd /mnt/stuff/repos'
+alias reSource="source ~/.bashrc"
+alias sysUp='sudo dnf update ; echo "+++ dnf done updating :D" ; flatpak update ; echo "+++ flatpak done updating :D"'
+alias profile='codium ~/.bashrc'
+alias customProfile='codium /mnt/stuff/repos/th3fishMk/fedscripts/custom_profile.sh'
 
 # Exports
-export PATH="/mnt/repos/th3fishMk/fedscripts/scripts:$PATH"
+export PATH="/mnt/stuff/repos/th3fishMk/fedscripts/scripts:$PATH"
 
 parse_git_branch() {
     git rev-parse --is-inside-work-tree &>/dev/null || return
